@@ -24,4 +24,16 @@ apt-get install phpmyadmin mysql-server memcached php5-memcached php5-xdebug php
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 ```
+### Clone Dev from Drupal
 
+Clone Dev Branch
+
+```
+ git clone --branch 8.0.x http://git.drupal.org/project/drupal.git
+```
+
+Vagrant up the machine, change the default vhost in apache to use /var/drupal instead of /var/www as DocRoot.
+
+Create a database called drupal8, user root, pass toor.
+
+Access to 10.11.12.200 and follow the installer.
