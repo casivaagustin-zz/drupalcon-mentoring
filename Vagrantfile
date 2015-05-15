@@ -10,6 +10,7 @@ boxes = [
     ],
     :synced_folders => [
       {'src' => '/var/www'},
+      {'drupal' => '/var/drupal'},
     ], 
   },
 ]
@@ -20,7 +21,7 @@ Vagrant.configure("2") do |config|
       config.vm.box = "opscode_debian64"
       config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-7.2.0_chef-provisionerless.box"
       config.vm.boot_timeout = 600
-
+      #config.vm.provision "shell", path: "provision.sh"
       config.vm.network :public_network
 
       if opts[:ip].is_a? Array
